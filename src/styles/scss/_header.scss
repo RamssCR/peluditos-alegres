@@ -1,0 +1,166 @@
+@use 'init' as vars;
+
+header{
+    background-color: vars.$mainColor;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    position: fixed;
+    width: 100%;
+    top: 0;
+
+    @media only screen and (width >= 1115px) {
+        padding: 1.4em;
+    }
+
+    .main-title{
+        color: vars.$textBrightColor;
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        font-size: 1.3em;
+
+        @media only screen and (width >= 1115px) {
+            font-size: 1.5em;
+        }
+
+        img{
+            width: 1.8em;
+        }
+    }
+
+    .desktop-navbar{
+        display: none;
+
+        @media only screen and (width >= 1115px) {
+            display: flex;
+            align-items: center;
+            gap: 4em;
+        }
+
+        li{
+            list-style: none;
+        }
+
+        li a{
+            display: block;
+            color: vars.$textBrightColor;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: .2s;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+            &:hover{
+                filter: brightness(110%);
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .burguer{
+        width: 2.8em;
+
+        @media only screen and (width >= 1115px) {
+            display: none;
+        }
+    }
+}
+
+.modal{
+    width: 100%;
+    height: 100vh;
+    background-color: vars.$bgModalLayer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    animation: fadeIn .2s linear;
+    
+    @keyframes fadeIn {
+        0%{
+            opacity: 0;
+        }
+
+        100%{
+            opacity: 1;
+        }
+    }
+
+    .mobile-navbar-container{
+        width: 14em;
+        height: 100vh;
+        background-color: vars.$textBrightColor;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 3em;
+        padding: 1.5em 1.5em 1.5em 2em;
+        animation: slideIn .3s linear;
+
+        @keyframes slideIn {
+            0%{
+                transform: translateX(14em);
+            }
+
+            50%{
+                transform: translateX(14em);
+            }
+
+            100%{
+                transform: translateX(0);
+            }
+        }
+
+        .quit{
+            font-size: 1.4em;
+            font-weight: 600;
+
+            &:hover{
+                color: vars.$danger;
+            }
+        }
+
+        .mobile-navbar{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+        }
+
+        .mobile-navbar li{
+            list-style: none;
+        }
+
+        .mobile-navbar li a{
+            text-decoration: none;
+            color: vars.$textDarkColor;
+            font-size: 1.1em;
+            transition: .2s;
+            font-weight: 600;
+            display: block;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+            &:hover{
+                color: vars.$mainColor;
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .slideOut{
+        animation: slideOut .4s linear;
+
+        @keyframes slideOut {
+            0%{
+                transform: translateX(0);
+            }
+
+            100%{
+                transform: translateX(80em);
+            }
+        }
+    }
+}

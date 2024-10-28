@@ -1,0 +1,65 @@
+@use 'init' as vars;
+
+.services{
+    display: grid;
+    background-color: vars.$bgAbout;
+    box-shadow: 0 -0.2em 0.5em vars.$bgAbout;
+    padding: 2em;
+    min-height: 65vh;
+    max-height: 110vh;
+
+    @media only screen and (width >= 1115px) {
+        grid-template-columns: 1fr 1fr;
+        box-shadow: none;
+    }
+
+    .services-image{
+        display: none;
+
+        @media only screen and (width >= 1115px) {
+            display: grid;
+            place-items: center;
+        }
+
+        img{
+            width: 29em;
+        }
+    }
+
+    .services-info{
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        justify-content: center;
+        align-items: center;
+
+        @media only screen and (width >= 1115px) {
+            padding-right: 2em;
+        }
+
+        .services-title{
+            font-size: 1.7em;
+        }
+
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 0.6em;
+        }
+
+        ul li{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.7em;
+        }
+
+        ul li img{
+            width: 2.2em;
+        }
+
+        ul li .service-item{
+            font-weight: 500;
+        }
+    }
+}

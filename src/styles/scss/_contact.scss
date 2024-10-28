@@ -1,0 +1,212 @@
+@use 'init' as vars;
+
+.contact2{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5em 2em;
+
+    @media only screen and (width >= 1115px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-form-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+
+        .contact-form-title{
+            text-align: center;
+            padding: 0 0.5em;
+            font-size: 1.3em;
+        }
+
+        .contact-form{
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            background-color: vars.$textBrightColor;
+            padding: 1.5em 2em;
+            border-top: 3px solid vars.$mainColor;
+            width: 22em;
+
+            @media only screen and (width >= 1115px) {
+                width: 28em;
+            }
+        }
+
+        .contact-form .form-title{
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            color: vars.$formTextColor;
+        }
+
+        .contact-form .input-success{
+            font-size: 0.85em;
+            text-align: center;
+            font-weight: 600;
+            color: vars.$mainColor;
+            margin-top: -0.6em;
+            animation: fade 2.7s linear;
+        }
+
+        @keyframes fade {
+            0%{
+                opacity: 0;
+            }
+
+            10%{
+                opacity: 1;
+            }
+
+            80%{
+                opacity: 1;
+            }
+
+            90%{
+                opacity: 0;
+            }
+
+            100%{
+                opacity: 0;
+            }
+        }
+
+        .contact-form .input-group{
+            display: flex;
+            flex-direction: column;
+            gap: 0.4em;
+        }
+
+        .contact-form .input-group label{
+            font-weight: 500;
+            color: vars.$formTextColor;
+        }
+
+        .contact-form .input-group input[type="text"],
+        .contact-form .input-group input[type="email"],
+        .contact-form .input-group textarea{
+            border: 1px solid vars.$inputBorder;
+            font-size: 0.90em;
+            padding: 0.5em 0.8em;
+            border-radius: 0.23em;
+            outline-color: vars.$mainColor;
+        }
+
+        .contact-form .input-group textarea{
+            resize: none;
+        }
+
+        .contact-form .input-group .input-error{
+            color: vars.$danger;
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-top: -0.2em;
+        }
+
+        .contact-form input[type="submit"]{
+            background-color: vars.$mainColor;
+            border: none;
+            font-size: 1em;
+            color: vars.$textBrightColor;
+            font-weight: 500;
+            text-transform: uppercase;
+            padding: 0.5em 0;
+            border-radius: 0.3em;
+            
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+
+    .social-media{
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        .social-media-title{
+            text-align: center;
+            font-size: 1.3em;
+            padding: 0 0.5em;
+        }
+
+        .media-container{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 2.5em;
+            row-gap: 2.5em;
+
+            @media only screen and (width >= 1115px) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 2.5em;
+            }
+        }
+
+        .media-container .media{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1em;
+        }
+
+        .media-container .media .img{
+            display: block;
+            padding: 1em;
+            border-radius: 50%;
+            transition: .2s;
+
+
+            &:hover{
+                transform: translateY(-0.2em);
+            }
+        }
+
+        .media-container .media .ws2{
+            background-color: vars.$mainColor;
+        }
+
+        .media-container .media .ig{
+            background: vars.$igColor;
+        }
+
+        .media-container .media .fb{
+            background-color: vars.$fbColor;
+        }
+
+        .media-container .media .xt{
+            background-color: vars.$xColor;
+        }
+
+        .media-container .media .img img{
+            width: 5em;
+            height: 5em;
+
+            @media only screen and (width >= 1115px) {
+                width: 4em;
+                height: 4em;
+            }
+        }
+
+        .media-container .media .media-name{
+            text-decoration: none;
+            color: vars.$formTextColor;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}

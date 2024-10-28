@@ -1,0 +1,52 @@
+@use 'init' as vars;
+
+.about{
+    min-height: 60vh;
+    max-height: 110vh;
+    display: grid;
+    place-items: center;
+    padding: 2em 2.5em;
+
+    @media only screen and (width >= 1115px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .information{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        @media only screen and (width >= 1115px) {
+            padding: 0 4em;
+        }
+
+        .about-title{
+            font-size: 1.5em;
+
+            @media only screen and (width >= 1115px) {
+                font-size: 1.7em;
+            }
+        }
+
+        .about-description{
+            line-height: 1.3em;
+        }
+    }
+
+    .image-view{
+        display: none;
+        @media only screen and (width >= 1115px) {
+            display: grid;
+            place-items: end;
+            padding-right: 3em;
+            width: 100%;
+        }
+
+        img{
+            width: 28em;
+            height: 24em;
+            box-shadow: 0 0 0.4em vars.$textDarkColor;
+        }
+    }
+}

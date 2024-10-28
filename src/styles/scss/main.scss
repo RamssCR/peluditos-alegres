@@ -1,0 +1,22 @@
+@use 'init' as vars;
+@use 'header';
+@use 'banner';
+@use 'about';
+@use 'services';
+@use 'contact';
+@use 'footer';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: vars.$fontFamily;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: vars.$bgColor;
+}
